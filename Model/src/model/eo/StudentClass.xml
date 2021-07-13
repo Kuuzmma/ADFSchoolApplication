@@ -17,7 +17,14 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="STUDENT_CLASS"
-    PrimaryKey="true"/>
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.StudentClass.StudentFk_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ClassroomFk"
     ColumnName="CLASSROOM_FK"
@@ -25,7 +32,14 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="STUDENT_CLASS"
-    PrimaryKey="true"/>
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.StudentClass.ClassroomFk_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Key
     Name="StudentclassPrimaryKey"
     PrimaryKey="true">
@@ -37,4 +51,8 @@
       <Item Value="model.eo.StudentClass.ClassroomFk"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

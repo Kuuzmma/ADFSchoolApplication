@@ -17,7 +17,14 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="STUDENT_RESULT"
-    PrimaryKey="true"/>
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.StudentResult.StudentFk_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="ResultYear"
     Precision="20"
@@ -30,6 +37,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.StudentResult.ResultYear_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="GradeNumber"
@@ -43,6 +56,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.StudentResult.GradeNumber_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="FinalResult"
@@ -56,6 +75,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.StudentResult.FinalResult_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Key
     Name="StudentresultPrimaryKey"
@@ -70,4 +95,8 @@
       <Item Value="model.eo.StudentResult.FinalResult"/>
     </AttrArray>
   </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

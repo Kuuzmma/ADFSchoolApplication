@@ -9,7 +9,13 @@
   DBObjectType="table"
   DBObjectName="TEACHERS"
   AliasName="Teachers"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation"
+  RowClass="model.eo.TeachersImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="TeacherId"
     IsNotNull="true"
@@ -18,7 +24,14 @@
     Type="java.math.BigDecimal"
     ColumnType="NUMBER"
     TableName="TEACHERS"
-    PrimaryKey="true"/>
+    PrimaryKey="true">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Teachers.TeacherId_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="TeacherName"
     Precision="50"
@@ -30,6 +43,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="50"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Teachers.TeacherName_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="TeacherPhone"
@@ -42,6 +61,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Teachers.TeacherPhone_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="TeacherAddress"
@@ -54,6 +79,12 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="200"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Teachers.TeacherAddress_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
   <Attribute
     Name="TeacherDateOfBirth"
@@ -61,7 +92,18 @@
     SQLType="DATE"
     Type="java.sql.Timestamp"
     ColumnType="DATE"
-    TableName="TEACHERS"/>
+    TableName="TEACHERS">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Teachers.TeacherDateOfBirth_LABEL"/>
+        <FMT_FORMATTER
+          ResId="model.eo.Teachers.TeacherDateOfBirth_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.eo.Teachers.TeacherDateOfBirth_FMT_FORMAT"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
   <Attribute
     Name="TeacherGendar"
     Precision="20"
@@ -73,7 +115,24 @@
     <DesignTime>
       <Attr Name="_DisplaySize" Value="20"/>
     </DesignTime>
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.eo.Teachers.TeacherGendar_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
   </Attribute>
+  <Key
+    Name="PhoneAltKey"
+    AltKey="true">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TEACHERS"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.Teachers.TeacherPhone"/>
+    </AttrArray>
+  </Key>
   <Key
     Name="TeachersPk"
     PrimaryKey="true">
@@ -84,4 +143,17 @@
       <Item Value="model.eo.Teachers.TeacherId"/>
     </AttrArray>
   </Key>
+  <validation:UniqueKeyValidationBean
+    Name="TeachersRule0"
+    ResId="model.eo.Teachers_Rule_1"
+    KeyName="PhoneAltKey">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="TeacherPhone"/>
+    </validation:OnAttributes>
+  </validation:UniqueKeyValidationBean>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
 </Entity>

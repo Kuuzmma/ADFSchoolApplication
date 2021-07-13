@@ -9,7 +9,8 @@
   DBObjectType="table"
   DBObjectName="CLASSROOMS"
   AliasName="Classrooms"
-  BindingStyle="OracleName">
+  BindingStyle="OracleName"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
   <Attribute
     Name="RoomNumber"
     IsNotNull="true"
@@ -54,6 +55,15 @@
       <Item Value="model.eo.Classrooms.RoomNumber"/>
     </AttrArray>
   </Key>
+  <validation:UniqueKeyValidationBean
+    Name="ClassroomsRule0"
+    ResId="model.eo.Classrooms_Rule_1"
+    KeyName="ClassroomsPk">
+    <validation:OnAttributes>
+      <validation:Item
+        Value="RoomNumber"/>
+    </validation:OnAttributes>
+  </validation:UniqueKeyValidationBean>
   <ResourceBundle>
     <PropertiesBundle
       PropertiesFile="model.ModelBundle"/>
