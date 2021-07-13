@@ -44,31 +44,66 @@
     PrecisionRule="true"
     EntityAttrName="TeacherId"
     EntityUsage="Teachers"
-    AliasName="TEACHER_ID"/>
+    AliasName="TEACHER_ID">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="15"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TeacherName"
     PrecisionRule="true"
     EntityAttrName="TeacherName"
     EntityUsage="Teachers"
-    AliasName="TEACHER_NAME"/>
+    AliasName="TEACHER_NAME">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="15"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TeacherPhone"
     PrecisionRule="true"
     EntityAttrName="TeacherPhone"
     EntityUsage="Teachers"
-    AliasName="TEACHER_PHONE"/>
+    AliasName="TEACHER_PHONE">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="15"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TeacherAddress"
     PrecisionRule="true"
     EntityAttrName="TeacherAddress"
     EntityUsage="Teachers"
-    AliasName="TEACHER_ADDRESS"/>
+    AliasName="TEACHER_ADDRESS">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="15"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TeacherDateOfBirth"
     PrecisionRule="true"
     EntityAttrName="TeacherDateOfBirth"
     EntityUsage="Teachers"
-    AliasName="TEACHER_DATE_OF_BIRTH"/>
+    AliasName="TEACHER_DATE_OF_BIRTH">
+    <Properties>
+      <SchemaBasedProperties>
+        <DISPLAYWIDTH
+          Value="15"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TeacherGendar"
     PrecisionRule="true"
@@ -80,9 +115,81 @@
       <SchemaBasedProperties>
         <CONTROLTYPE
           Value="combo"/>
+        <DISPLAYWIDTH
+          Value="15"/>
       </SchemaBasedProperties>
     </Properties>
   </ViewAttribute>
+  <ViewCriteria
+    Name="SearchTeachersViewCriteria"
+    ViewObjectName="model.vo.TeachersView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="false"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="TeachersViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="TeacherId"
+        ViewAttribute="TeacherId"
+        Operator="="
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="TeacherName"
+        ViewAttribute="TeacherName"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="TeacherPhone"
+        ViewAttribute="TeacherPhone"
+        Operator="="
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="TeachersViewCriteria_TeachersViewCriteria_row_0_TeacherAddress"
+        ViewAttribute="TeacherAddress"
+        Operator="CONTAINS"
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="TeacherDateOfBirth"
+        ViewAttribute="TeacherDateOfBirth"
+        Operator="="
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+      <ViewCriteriaItem
+        Name="TeacherGendar"
+        ViewAttribute="TeacherGendar"
+        Operator="="
+        Conjunction="AND"
+        Value=""
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="TeacherClassesView"
     ViewLink="model.vo.TeacherLinkClasses"

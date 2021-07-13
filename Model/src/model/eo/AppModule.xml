@@ -28,4 +28,31 @@
   <ViewUsage
     Name="TeachersView1"
     ViewObjectName="model.vo.TeachersView"/>
+  <ViewUsage
+    Name="StudentClassView2"
+    ViewObjectName="model.vo.StudentClassView"/>
+  <ViewUsage
+    Name="StudentResultView2"
+    ViewObjectName="model.vo.StudentResultView"/>
+  <ViewUsage
+    Name="TeacherClassesView2"
+    ViewObjectName="model.vo.TeacherClassesView"/>
+  <ViewLinkUsage
+    Name="ClassLinkStudent1"
+    ViewLinkObjectName="model.vo.ClassLinkStudent"
+    SrcViewUsageName="model.eo.AppModule.ClassroomsView1"
+    DstViewUsageName="model.eo.AppModule.StudentClassView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="StudentLinkResult1"
+    ViewLinkObjectName="model.vo.StudentLinkResult"
+    SrcViewUsageName="model.eo.AppModule.StudentsView1"
+    DstViewUsageName="model.eo.AppModule.StudentResultView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="TeacherLinkClasses1"
+    ViewLinkObjectName="model.vo.TeacherLinkClasses"
+    SrcViewUsageName="model.eo.AppModule.TeachersView1"
+    DstViewUsageName="model.eo.AppModule.TeacherClassesView2"
+    Reversed="false"/>
 </AppModule>
