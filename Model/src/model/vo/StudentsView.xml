@@ -12,7 +12,29 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
+  <ViewAccessor
+    Name="StaticGender1"
+    ViewObjectName="model.staticvo.StaticGender"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_StudentGendar"
+    ListVOName="StaticGender1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="StudentGendar"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GendarId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GendarName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Students"
     Entity="model.eo.Students"/>
@@ -34,7 +56,15 @@
     PrecisionRule="true"
     EntityAttrName="StudentGendar"
     EntityUsage="Students"
-    AliasName="STUDENT_GENDAR"/>
+    AliasName="STUDENT_GENDAR"
+    LOVName="LOV_StudentGendar">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="StudentAddress"
     PrecisionRule="true"
@@ -71,4 +101,9 @@
     EntityAttrName="StudentCreatedDate"
     EntityUsage="Students"
     AliasName="STUDENT_CREATED_DATE"/>
+  <ViewLinkAccessor
+    Name="StudentResultView"
+    ViewLink="model.vo.StudentLinkResult"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

@@ -12,7 +12,29 @@
   SelectListFlags="1"
   FromListFlags="1"
   WhereFlags="1"
-  SelectAllAttributes="false">
+  SelectAllAttributes="false"
+  AccessMode="DEFAULT">
+  <ViewAccessor
+    Name="StaticGradeView1"
+    ViewObjectName="model.staticvo.StaticGradeView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_GradeNumber"
+    ListVOName="StaticGradeView1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="GradeNumber"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GradeId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GradeDesc"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Classrooms"
     Entity="model.eo.Classrooms"/>
@@ -28,5 +50,18 @@
     PrecisionRule="true"
     EntityAttrName="GradeNumber"
     EntityUsage="Classrooms"
-    AliasName="GRADE_NUMBER"/>
+    AliasName="GRADE_NUMBER"
+    LOVName="LOV_GradeNumber">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="StudentClassView"
+    ViewLink="model.vo.ClassLinkStudent"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

@@ -10,7 +10,12 @@
   DBObjectName="CLASSROOMS"
   AliasName="Classrooms"
   BindingStyle="OracleName"
-  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation"
+  RowClass="model.eo.ClassroomsImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init|Access"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
   <Attribute
     Name="RoomNumber"
     IsNotNull="true"

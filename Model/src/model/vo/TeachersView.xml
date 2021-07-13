@@ -12,7 +12,29 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
+  <ViewAccessor
+    Name="StaticGender1"
+    ViewObjectName="model.staticvo.StaticGender"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_TeacherGendar"
+    ListVOName="StaticGender1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="TeacherGendar"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="GendarId"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GendarName"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="Teachers"
     Entity="model.eo.Teachers"/>
@@ -52,5 +74,18 @@
     PrecisionRule="true"
     EntityAttrName="TeacherGendar"
     EntityUsage="Teachers"
-    AliasName="TEACHER_GENDAR"/>
+    AliasName="TEACHER_GENDAR"
+    LOVName="LOV_TeacherGendar">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewLinkAccessor
+    Name="TeacherClassesView"
+    ViewLink="model.vo.TeacherLinkClasses"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
 </ViewObject>

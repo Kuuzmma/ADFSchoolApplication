@@ -169,10 +169,10 @@
       <SchemaBasedProperties>
         <LABEL
           ResId="model.eo.Students.StudentCreatedDate_LABEL"/>
-        <FMT_FORMAT
-          ResId="model.eo.Students.StudentCreatedDate_FMT_FORMAT"/>
         <FMT_FORMATTER
           ResId="model.eo.Students.StudentCreatedDate_FMT_FORMATTER"/>
+        <FMT_FORMAT
+          ResId="model.eo.Students.StudentCreatedDate_FMT_FORMAT"/>
       </SchemaBasedProperties>
     </Properties>
   </Attribute>
