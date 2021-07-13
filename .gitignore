@@ -1,0 +1,36 @@
+#OS Cruft
+.DS_Store
+Thumbs.db
+
+# Compiled class file
+*.class
+
+# Log files
+*.log
+
+# Archives
+*.jar
+*.war
+*.ear
+
+# Misc
+*.sso
+
+
+# default application storage directory used by the IDE Performance Cache feature
+.data/
+
+# used for ADF styles caching
+temp/
+
+# default output directories
+classes/
+deploy/
+javadoc/
+
+# lock file, a part of Oracle Credential Store Framework
+cwallet.sso.lck
+
+# deployment reserved file space
+Model/servers/null/temp/README.TXT
+ViewController/servers/null/temp/README.TXT

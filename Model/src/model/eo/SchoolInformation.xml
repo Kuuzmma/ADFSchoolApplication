@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SchoolInformation"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="SCHOOL_INFORMATION"
+  AliasName="SchoolInformation"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="SchoolName"
+    Precision="50"
+    ColumnName="SCHOOL_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SCHOOL_INFORMATION"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SchoolAddress"
+    Precision="200"
+    ColumnName="SCHOOL_ADDRESS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SCHOOL_INFORMATION"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SchoolEmail"
+    Precision="50"
+    ColumnName="SCHOOL_EMAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SCHOOL_INFORMATION"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SchoolPhone"
+    Precision="20"
+    ColumnName="SCHOOL_PHONE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SCHOOL_INFORMATION"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SchoolFax"
+    Precision="20"
+    ColumnName="SCHOOL_FAX"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SCHOOL_INFORMATION"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SchoolPrincipalName"
+    Precision="50"
+    ColumnName="SCHOOL_PRINCIPAL_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SCHOOL_INFORMATION"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SchoolPrincipalUsername"
+    Precision="20"
+    ColumnName="SCHOOL_PRINCIPAL_USERNAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SCHOOL_INFORMATION"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SchoolPrincipalPasword"
+    Precision="20"
+    ColumnName="SCHOOL_PRINCIPAL_PASWORD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SCHOOL_INFORMATION"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="SchoolinformationPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SCHOOLINFORMATION_PRIMARY_KEY"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.eo.SchoolInformation.SchoolName"/>
+      <Item Value="model.eo.SchoolInformation.SchoolAddress"/>
+      <Item Value="model.eo.SchoolInformation.SchoolEmail"/>
+      <Item Value="model.eo.SchoolInformation.SchoolPhone"/>
+      <Item Value="model.eo.SchoolInformation.SchoolFax"/>
+      <Item Value="model.eo.SchoolInformation.SchoolPrincipalName"/>
+      <Item Value="model.eo.SchoolInformation.SchoolPrincipalUsername"/>
+      <Item Value="model.eo.SchoolInformation.SchoolPrincipalPasword"/>
+    </AttrArray>
+  </Key>
+</Entity>
