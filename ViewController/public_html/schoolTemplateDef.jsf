@@ -18,7 +18,7 @@
             </afc:attribute>
         </afc:component>
     </af:xmlContent>
-    <af:panelSplitter orientation="vertical" splitterPosition="50" id="pt_ps1">
+    <af:panelSplitter orientation="vertical" splitterPosition="105" id="pt_ps1">
         <f:facet name="first">
             <af:panelGridLayout id="pt_pgl1">
                 <af:gridRow marginTop="5px" height="auto" id="pt_gr1">
@@ -31,9 +31,11 @@
                     </af:gridCell>
                     <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="pt_gc3">
                         <af:panelGroupLayout id="pt_pgl2" layout="horizontal" halign="right">
-                            <af:menu text="#{sessionScope.userName}" id="pt_m1">
-                                <af:commandMenuItem text="Logout" id="pt_cmi1"/>
-                            </af:menu>
+                            <af:menuBar id="pt_mb2">
+                                <af:menu text="#{sessionScope.userName}" id="pt_m1">
+                                    <af:commandMenuItem text="Logout" id="pt_cmi1"/>
+                                </af:menu>
+                            </af:menuBar>
                         </af:panelGroupLayout>
                     </af:gridCell>
                 </af:gridRow>
