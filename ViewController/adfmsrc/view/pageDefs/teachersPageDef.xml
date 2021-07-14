@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="teachersPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="TeachersView1" RangeSize="25" DataControl="AppModuleDataControl" id="TeachersView1Iterator"/>
+    <searchRegion Binds="TeachersView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TeachersView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="TeachersView1Iterator" id="TeachersView1">
+      <nodeDefinition DefName="model.vo.TeachersView" Name="TeachersView10">
+        <AttrNames>
+          <Item Value="TeacherId"/>
+          <Item Value="TeacherName"/>
+          <Item Value="TeacherPhone"/>
+          <Item Value="TeacherAddress"/>
+          <Item Value="TeacherDateOfBirth"/>
+          <Item Value="TeacherGendar"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="TeachersView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="TeachersView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+    <attributeValues IterBinding="TeachersView1Iterator" id="TeacherId">
+      <AttrNames>
+        <Item Value="TeacherId"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

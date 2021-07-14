@@ -3,9 +3,15 @@
              SeparateXMLFiles="false" Package="view" ClientType="Generic">
   <pageMap>
     <page path="/classrooms.jsf" usageId="view_classroomsPageDef"/>
+    <page path="/teachers.jsf" usageId="view_teachersPageDef"/>
+    <page path="/students.jsf" usageId="view_studentsPageDef"/>
+    <page path="/searchTeacher.jsf" usageId="view_searchTeacherPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_classroomsPageDef" path="view.pageDefs.classroomsPageDef"/>
+    <page id="view_teachersPageDef" path="view.pageDefs.teachersPageDef"/>
+    <page id="view_studentsPageDef" path="view.pageDefs.studentsPageDef"/>
+    <page id="view_searchTeacherPageDef" path="view.pageDefs.searchTeacherPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.eo"
