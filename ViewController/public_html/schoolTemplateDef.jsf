@@ -42,20 +42,22 @@
                 <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr2">
                     <af:gridCell marginStart="5px" columnSpan="3" marginEnd="5px" id="pt_gc4">
                         <af:menuBar id="pt_mb1">
-                            <af:commandMenuItem text="Dashboard" id="pt_cmi2"/>
+                            <af:commandMenuItem text="Dashboard" id="pt_cmi2" action="goToDashboard"/>
                             <af:menu text="Transaction" id="pt_m2">
-                                <af:commandMenuItem text="Assign Class to Teacher" id="pt_cmi3"/>
-                                <af:commandMenuItem text="Add Student to Class" id="pt_cmi4"/>
-                                <af:commandMenuItem text="Student Results" id="pt_cmi5"/>
+                                <af:commandMenuItem text="Assign Class to Teacher" id="pt_cmi3"
+                                                    action="goToClassToTeacher"/>
+                                <af:commandMenuItem text="Add Student to Class" id="pt_cmi4"
+                                                    action="goToStudentToClass"/>
+                                <af:commandMenuItem text="Student Results" id="pt_cmi5" action="goToStudentResults"/>
                             </af:menu>
                             <af:menu text="Search" id="pt_m3">
-                                <af:commandMenuItem text="Search Teacher" id="pt_cmi6"/>
-                                <af:commandMenuItem text="Search Student" id="pt_cmi7"/>
+                                <af:commandMenuItem text="Search Teacher" id="pt_cmi6" action="goToSearchTeacher"/>
+                                <af:commandMenuItem text="Search Student" id="pt_cmi7" action="goToSearchStudent"/>
                             </af:menu>
                             <af:menu text="Lookups" id="pt_m4">
-                                <af:commandMenuItem text="Classroms" id="pt_cmi8"/>
-                                <af:commandMenuItem text="Teachers" id="pt_cmi9"/>
-                                <af:commandMenuItem text="Students" id="pt_cmi10"/>
+                                <af:commandMenuItem text="Classroms" id="pt_cmi8" action="goToClassrooms"/>
+                                <af:commandMenuItem text="Teachers" id="pt_cmi9" action="goToTeacher"/>
+                                <af:commandMenuItem text="Students" id="pt_cmi10" action="goToStudents"/>
                             </af:menu>
                         </af:menuBar>
                     </af:gridCell>

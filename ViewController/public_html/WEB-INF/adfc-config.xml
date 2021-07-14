@@ -3,4 +3,67 @@
   <view id="dashboard">
     <page>/dashboard.jsf</page>
   </view>
+  <view id="classToTeacher">
+    <page>/classToTeacher.jsf</page>
+  </view>
+  <view id="studentToClass">
+    <page>/studentToClass.jsf</page>
+  </view>
+  <view id="studentResults">
+    <page>/studentResults.jsf</page>
+  </view>
+  <view id="searchTeacher">
+    <page>/searchTeacher.jsf</page>
+  </view>
+  <view id="searchStudent">
+    <page>/searchStudent.jsf</page>
+  </view>
+  <view id="teachers">
+    <page>/teachers.jsf</page>
+  </view>
+  <view id="students">
+    <page>/students.jsf</page>
+  </view>
+  <view id="classrooms">
+    <page>/classrooms.jsf</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>goToDashboard</from-outcome>
+      <to-activity-id>dashboard</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__3">
+      <from-outcome>goToSearchStudent</from-outcome>
+      <to-activity-id>searchStudent</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__4">
+      <from-outcome>goToSearchTeacher</from-outcome>
+      <to-activity-id>searchTeacher</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__5">
+      <from-outcome>goToTeacher</from-outcome>
+      <to-activity-id>teachers</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__6">
+      <from-outcome>goToStudents</from-outcome>
+      <to-activity-id>students</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__7">
+      <from-outcome>goToClassrooms</from-outcome>
+      <to-activity-id>classrooms</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__8">
+      <from-outcome>goToClassToTeacher</from-outcome>
+      <to-activity-id>classToTeacher</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__9">
+      <from-outcome>goToStudentToClass</from-outcome>
+      <to-activity-id>studentToClass</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__10">
+      <from-outcome>goToStudentResults</from-outcome>
+      <to-activity-id>studentResults</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
 </adfc-config>
