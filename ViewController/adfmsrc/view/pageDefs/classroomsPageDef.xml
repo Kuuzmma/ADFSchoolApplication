@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="classroomsPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ClassroomsView1" RangeSize="25" DataControl="AppModuleDataControl" id="ClassroomsView1Iterator"/>
+    <searchRegion Binds="ClassroomsView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ClassroomsView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="ClassroomsView1Iterator" id="ClassroomsView1">
+      <nodeDefinition DefName="model.vo.ClassroomsView" Name="ClassroomsView10">
+        <AttrNames>
+          <Item Value="RoomNumber"/>
+          <Item Value="GradeNumber"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="ClassroomsView1Iterator" id="CreateInsert" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="ClassroomsView1Iterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="AppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="AppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

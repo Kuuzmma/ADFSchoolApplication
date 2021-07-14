@@ -9,11 +9,11 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   PageIterMode="Full"
-  SelectListFlags="1"
-  FromListFlags="1"
-  WhereFlags="1"
-  SelectAllAttributes="false"
-  AccessMode="DEFAULT">
+  AccessMode="DEFAULT"
+  SelectList="Classrooms.ROOM_NUMBER, 
+       Classrooms.GRADE_NUMBER"
+  FromList="CLASSROOMS Classrooms"
+  OrderBy="Classrooms.ROOM_NUMBER asc">
   <ViewAccessor
     Name="StaticGradeView1"
     ViewObjectName="model.staticvo.StaticGradeView"
