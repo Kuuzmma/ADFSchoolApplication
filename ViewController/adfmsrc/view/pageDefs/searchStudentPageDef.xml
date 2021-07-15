@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="searchStudentPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="StudentsView1" RangeSize="25" DataControl="AppModuleDataControl" id="StudentsView1Iterator"/>
+    <searchRegion Criteria="SearchStudentsViewCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  Binds="StudentsView1Iterator" id="SearchStudentsViewCriteriaQuery"/>
+    <iterator Binds="StudentClassView3" RangeSize="25" DataControl="AppModuleDataControl"
+              id="StudentClassView3Iterator"/>
+    <iterator Binds="StudentResultView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="StudentResultView2Iterator"/>
+    <searchRegion Binds="StudentResultView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="StudentResultView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="StudentsView1Iterator" id="StudentsView1">
+      <nodeDefinition DefName="model.vo.StudentsView" Name="StudentsView10">
+        <AttrNames>
+          <Item Value="StudentId"/>
+          <Item Value="StudentName"/>
+          <Item Value="StudentGendar"/>
+          <Item Value="StudentAddress"/>
+          <Item Value="StudentDob"/>
+          <Item Value="StudentParentName"/>
+          <Item Value="StudentParentEmail"/>
+          <Item Value="StudentParentPhone"/>
+          <Item Value="StudentCreatedDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="StudentsView1Iterator" id="StudentId">
+      <AttrNames>
+        <Item Value="StudentId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentsView1Iterator" id="StudentName">
+      <AttrNames>
+        <Item Value="StudentName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="StudentsView1Iterator" StaticList="false" Uses="LOV_StudentGendar" id="StudentGendar"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <attributeValues IterBinding="StudentsView1Iterator" id="StudentAddress">
+      <AttrNames>
+        <Item Value="StudentAddress"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentClassView3Iterator" id="ClassroomFk">
+      <AttrNames>
+        <Item Value="ClassroomFk"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="StudentClassView3Iterator" id="TGradeNumber">
+      <AttrNames>
+        <Item Value="TGradeNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="StudentResultView2Iterator" id="StudentResultView2">
+      <nodeDefinition DefName="model.vo.StudentResultView" Name="StudentResultView20">
+        <AttrNames>
+          <Item Value="StudentFk"/>
+          <Item Value="ResultYear"/>
+          <Item Value="GradeNumber"/>
+          <Item Value="FinalResult"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

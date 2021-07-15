@@ -132,62 +132,59 @@
         ViewAttribute="StudentId"
         Operator="="
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="StudentName"
         ViewAttribute="StudentName"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="StudentsViewCriteria_StudentsViewCriteria_row_0_StudentAddress"
         ViewAttribute="StudentAddress"
         Operator="CONTAINS"
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="StudentsViewCriteria_StudentsViewCriteria_row_0_StudentDob"
         ViewAttribute="StudentDob"
         Operator="="
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="StudentParentName"
         ViewAttribute="StudentParentName"
         Operator="="
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="StudentParentEmail"
         ViewAttribute="StudentParentEmail"
         Operator="="
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="StudentParentPhone"
         ViewAttribute="StudentParentPhone"
         Operator="="
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
       <ViewCriteriaItem
         Name="StudentCreatedDate"
         ViewAttribute="StudentCreatedDate"
         Operator="="
         Conjunction="AND"
-        Value=""
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
   <ViewLinkAccessor
     Name="StudentResultView"
     ViewLink="model.vo.StudentLinkResult"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="StudentClassView"
+    ViewLink="model.vo.StudentLinkStudentClass"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
 </ViewObject>

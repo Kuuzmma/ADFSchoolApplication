@@ -29,7 +29,7 @@
                         <af:outputText value="#{attrs.pageTitle}" id="pt_ot1"
                                        inlineStyle="color:#0572ce; font-size:medium;"/>
                     </af:gridCell>
-                    <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="pt_gc3">
+                    <af:gridCell marginStart="5px" width="33%" marginEnd="5px" id="pt_gc3" halign="end">
                         <af:panelGroupLayout id="pt_pgl2" layout="horizontal" halign="right">
                             <af:menuBar id="pt_mb2">
                                 <af:menu text="#{sessionScope.userName}" id="pt_m1">
