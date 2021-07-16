@@ -12,7 +12,31 @@
   BindingStyle="OracleName"
   CustomQuery="false"
   SelectAllAttributes="false"
-  PageIterMode="Full">
+  PageIterMode="Full"
+  AccessMode="DEFAULT">
+  <ViewAccessor
+    Name="ClassroomsView1"
+    ViewObjectName="model.vo.ClassroomsView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ClassroomFk"
+    ListVOName="ClassroomsView1"
+    NullValueFlag="start"
+    NullValueId="${adfBundle['oracle.javatools.resourcebundle.SystemBundle']['NULL_VALUE_RESID']}"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ClassroomFk"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="RoomNumber"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="RoomNumber"/>
+      <Item Value="GradeNumber"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="TeacherClasses"
     Entity="model.eo.TeacherClasses"/>
@@ -27,5 +51,13 @@
     PrecisionRule="true"
     EntityAttrName="ClassroomFk"
     EntityUsage="TeacherClasses"
-    AliasName="CLASSROOM_FK"/>
+    AliasName="CLASSROOM_FK"
+    LOVName="LOV_ClassroomFk">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
 </ViewObject>

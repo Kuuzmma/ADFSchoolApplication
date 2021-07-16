@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ROAveragePassStudentsView"
+  Version="12.2.1.22.48"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_isExpertMode" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="model.ro.ROAveragePassStudentsView_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery><![CDATA[select ((select count(*) as pass_students from STUDENT_RESULT where STUDENT_RESULT.FINAL_RESULT = 'pass' and STUDENT_RESULT.RESULT_YEAR =(select (EXTRACT( YEAR FROM sysdate) - 1) from dual)) / (select count(*) from STUDENTS)) * 100 as avg_pass from dual]]></SQLQuery>
+  <ViewAttribute
+    Name="AvgPass"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    AliasName="AVG_PASS"
+    Expression="AVG_PASS"
+    SQLType="NUMERIC">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="model.ro.ROAveragePassStudentsView.AvgPass_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

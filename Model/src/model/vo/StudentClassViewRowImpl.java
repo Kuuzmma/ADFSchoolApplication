@@ -4,6 +4,7 @@ import java.math.BigDecimal;
 
 import model.common.ModelUtil;
 
+import oracle.jbo.RowSet;
 import oracle.jbo.server.EntityImpl;
 import oracle.jbo.server.ViewRowImpl;
 // ---------------------------------------------------------------------
@@ -13,6 +14,7 @@ import oracle.jbo.server.ViewRowImpl;
 // ---    Warning: Do not modify method signatures of generated methods.
 // ---------------------------------------------------------------------
 public class StudentClassViewRowImpl extends ViewRowImpl {
+
     public static final int ENTITY_STUDENTCLASS = 0;
 
     /**
@@ -21,8 +23,11 @@ public class StudentClassViewRowImpl extends ViewRowImpl {
     protected enum AttributesEnum {
         StudentFk,
         ClassroomFk,
-        TGradeNumber;
+        TGradeNumber,
+        StudentClassView1,
+        ClassroomsView1;
         private static AttributesEnum[] vals = null;
+        ;
         private static final int firstIndex = 0;
 
         protected int index() {
@@ -44,9 +49,12 @@ public class StudentClassViewRowImpl extends ViewRowImpl {
             return vals;
         }
     }
+
     public static final int STUDENTFK = AttributesEnum.StudentFk.index();
     public static final int CLASSROOMFK = AttributesEnum.ClassroomFk.index();
     public static final int TGRADENUMBER = AttributesEnum.TGradeNumber.index();
+    public static final int STUDENTCLASSVIEW1 = AttributesEnum.StudentClassView1.index();
+    public static final int CLASSROOMSVIEW1 = AttributesEnum.ClassroomsView1.index();
 
     /**
      * This is the default constructor (do not remove).
@@ -110,6 +118,20 @@ public class StudentClassViewRowImpl extends ViewRowImpl {
      */
     public void setTGradeNumber(String value) {
         setAttributeInternal(TGRADENUMBER, value);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> StudentClassView1.
+     */
+    public RowSet getStudentClassView1() {
+        return (RowSet) getAttributeInternal(STUDENTCLASSVIEW1);
+    }
+
+    /**
+     * Gets the view accessor <code>RowSet</code> ClassroomsView1.
+     */
+    public RowSet getClassroomsView1() {
+        return (RowSet) getAttributeInternal(CLASSROOMSVIEW1);
     }
 }
 

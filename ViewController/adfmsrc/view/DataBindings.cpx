@@ -7,6 +7,9 @@
     <page path="/students.jsf" usageId="view_studentsPageDef"/>
     <page path="/searchTeacher.jsf" usageId="view_searchTeacherPageDef"/>
     <page path="/searchStudent.jsf" usageId="view_searchStudentPageDef"/>
+    <page path="/classToTeacher.jsf" usageId="view_classToTeacherPageDef"/>
+    <page path="/studentToClass.jsf" usageId="view_studentToClassPageDef"/>
+    <page path="/studentResults.jsf" usageId="view_studentResultsPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_classroomsPageDef" path="view.pageDefs.classroomsPageDef"/>
@@ -14,6 +17,9 @@
     <page id="view_studentsPageDef" path="view.pageDefs.studentsPageDef"/>
     <page id="view_searchTeacherPageDef" path="view.pageDefs.searchTeacherPageDef"/>
     <page id="view_searchStudentPageDef" path="view.pageDefs.searchStudentPageDef"/>
+    <page id="view_classToTeacherPageDef" path="view.pageDefs.classToTeacherPageDef"/>
+    <page id="view_studentToClassPageDef" path="view.pageDefs.studentToClassPageDef"/>
+    <page id="view_studentResultsPageDef" path="view.pageDefs.studentResultsPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.eo"

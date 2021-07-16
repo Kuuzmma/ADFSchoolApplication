@@ -4,13 +4,15 @@
   <parameters/>
   <executables>
     <variableIterator id="variables"/>
-    <iterator Binds="TeachersView1" RangeSize="25" DataControl="AppModuleDataControl" id="TeachersView1Iterator"/>
+    <iterator Binds="TeachersView1" RangeSize="25" DataControl="AppModuleDataControl" id="TeachersView1Iterator"
+              ChangeEventPolicy="ppr"/>
     <searchRegion Criteria="SearchTeachersViewCriteria" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
                   Binds="TeachersView1Iterator" id="SearchTeachersViewCriteriaQuery"/>
     <iterator Binds="TeacherClassesView2" RangeSize="25" DataControl="AppModuleDataControl"
-              id="TeacherClassesView2Iterator"/>
+              id="TeacherClassesView2Iterator" ChangeEventPolicy="ppr"/>
     <searchRegion Binds="TeacherClassesView2Iterator" Criteria=""
                   Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="TeacherClassesView2Query"/>
+    <iterator Binds="ClassroomsView1" RangeSize="10" DataControl="AppModuleDataControl" id="ClassroomsView1Iterator"/>
   </executables>
   <bindings>
     <tree IterBinding="TeachersView1Iterator" id="TeachersView1">
@@ -25,14 +27,8 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
-    <tree IterBinding="TeacherClassesView2Iterator" id="TeacherClassesView2">
-      <nodeDefinition DefName="model.vo.TeacherClassesView" Name="TeacherClassesView20">
-        <AttrNames>
-          <Item Value="TeacherFk"/>
-          <Item Value="ClassroomFk"/>
-        </AttrNames>
-      </nodeDefinition>
-    </tree>
+    <list IterBinding="TeachersView1Iterator" StaticList="false" Uses="LOV_TeacherGendar" id="TeacherGendar"
+          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
     <attributeValues IterBinding="TeachersView1Iterator" id="TeacherId">
       <AttrNames>
         <Item Value="TeacherId"/>
@@ -58,7 +54,18 @@
         <Item Value="TeacherDateOfBirth"/>
       </AttrNames>
     </attributeValues>
-    <list IterBinding="TeachersView1Iterator" StaticList="false" Uses="LOV_TeacherGendar" id="TeacherGendar"
-          DTSupportsMRU="false" SelectItemValueMode="ListObject"/>
+    <tree IterBinding="TeacherClassesView2Iterator" id="TeacherClassesView2">
+      <nodeDefinition DefName="model.vo.TeacherClassesView" Name="TeacherClassesView20">
+        <AttrNames>
+          <Item Value="TeacherFk"/>
+          <Item Value="ClassroomFk"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="ClassroomsView1Iterator" id="RoomNumber">
+      <AttrNames>
+        <Item Value="RoomNumber"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

@@ -40,6 +40,21 @@
   <ViewUsage
     Name="StudentClassView3"
     ViewObjectName="model.vo.StudentClassView"/>
+  <ViewUsage
+    Name="ROAveragePassStudentsView1"
+    ViewObjectName="model.ro.ROAveragePassStudentsView"/>
+  <ViewUsage
+    Name="RODashboardStatisticsView1"
+    ViewObjectName="model.ro.RODashboardStatisticsView"/>
+  <ViewUsage
+    Name="RONumberOfStudentInClassView1"
+    ViewObjectName="model.ro.RONumberOfStudentInClassView"/>
+  <ViewUsage
+    Name="ROStudentInGradeView1"
+    ViewObjectName="model.ro.ROStudentInGradeView"/>
+  <ViewUsage
+    Name="ROTeachersInClassroomView1"
+    ViewObjectName="model.ro.ROTeachersInClassroomView"/>
   <ViewLinkUsage
     Name="ClassLinkStudent1"
     ViewLinkObjectName="model.vo.ClassLinkStudent"

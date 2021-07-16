@@ -19,6 +19,32 @@
     <Attr Name="_codeGenFlag2" Value="Access"/>
     <Attr Name="_isCodegen" Value="true"/>
   </DesignTime>
+  <ViewAccessor
+    Name="StudentClassView1"
+    ViewObjectName="model.vo.StudentClassView"
+    RowLevelBinds="true"/>
+  <ViewAccessor
+    Name="ClassroomsView1"
+    ViewObjectName="model.vo.ClassroomsView"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ClassroomFk"
+    ListVOName="ClassroomsView1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ClassroomFk"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="RoomNumber"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="GradeNumber"/>
+      <Item Value="RoomNumber"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
   <EntityUsage
     Name="StudentClass"
     Entity="model.eo.StudentClass"/>
@@ -33,7 +59,15 @@
     PrecisionRule="true"
     EntityAttrName="ClassroomFk"
     EntityUsage="StudentClass"
-    AliasName="CLASSROOM_FK"/>
+    AliasName="CLASSROOM_FK"
+    LOVName="LOV_ClassroomFk">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="combo"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
   <ViewAttribute
     Name="TGradeNumber"
     IsSelected="false"

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="studentResultsPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="StudentsView1" RangeSize="25" DataControl="AppModuleDataControl" id="StudentsView1Iterator"/>
+    <searchRegion Binds="StudentsView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="StudentsView1Query"/>
+    <iterator Binds="StudentResultView2" RangeSize="25" DataControl="AppModuleDataControl"
+              id="StudentResultView2Iterator"/>
+    <searchRegion Binds="StudentResultView2Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="StudentResultView2Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="StudentsView1Iterator" id="StudentsView1">
+      <nodeDefinition DefName="model.vo.StudentsView" Name="StudentsView10">
+        <AttrNames>
+          <Item Value="StudentId"/>
+          <Item Value="StudentName"/>
+          <Item Value="StudentGendar"/>
+          <Item Value="StudentAddress"/>
+          <Item Value="StudentDob"/>
+          <Item Value="StudentParentName"/>
+          <Item Value="StudentParentEmail"/>
+          <Item Value="StudentParentPhone"/>
+          <Item Value="StudentCreatedDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="StudentResultView2Iterator" id="StudentResultView2">
+      <nodeDefinition DefName="model.vo.StudentResultView" Name="StudentResultView20">
+        <AttrNames>
+          <Item Value="StudentFk"/>
+          <Item Value="ResultYear"/>
+          <Item Value="GradeNumber"/>
+          <Item Value="FinalResult"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="StudentResultView2Iterator" id="CreateInsert"
+            InstanceName="AppModuleDataControl.StudentResultView2" DataControl="AppModuleDataControl"
+            RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="StudentResultView2Iterator" id="Delete" InstanceName="AppModuleDataControl.StudentResultView2"
+            DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <action id="Commit" DataControl="AppModuleDataControl" RequiresUpdateModel="true" Action="commitTransaction"/>
+    <action id="Rollback" DataControl="AppModuleDataControl" RequiresUpdateModel="false" Action="rollbackTransaction"/>
+  </bindings>
+</pageDefinition>
