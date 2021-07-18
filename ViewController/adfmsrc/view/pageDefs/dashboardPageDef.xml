@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48" id="dashboardPageDef"
+                Package="view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="RONumberOfStudentInClassView1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="RONumberOfStudentInClassView1Iterator"/>
+    <iterator Binds="ROTeachersInClassroomView1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="ROTeachersInClassroomView1Iterator"/>
+    <iterator Binds="ROAveragePassStudentsView1" RangeSize="1" DataControl="AppModuleDataControl"
+              id="ROAveragePassStudentsView1Iterator"/>
+    <iterator Binds="ROStudentInGradeView1" RangeSize="-1" DataControl="AppModuleDataControl"
+              id="ROStudentInGradeView1Iterator"/>
+    <iterator Binds="RODashboardStatisticsView1" RangeSize="25" DataControl="AppModuleDataControl"
+              id="RODashboardStatisticsView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="RONumberOfStudentInClassView1Iterator" id="RONumberOfStudentInClassView1"
+          ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ro.RONumberOfStudentInClassView" Name="RONumberOfStudentInClassView1">
+        <AttrNames>
+          <Item Value="ClassroomFk"/>
+          <Item Value="Selectobjects0"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ROTeachersInClassroomView1Iterator" id="ROTeachersInClassroomView1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ro.ROTeachersInClassroomView" Name="ROTeachersInClassroomView1">
+        <AttrNames>
+          <Item Value="Selectobjects0"/>
+          <Item Value="ClassroomFk"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="ROAveragePassStudentsView1Iterator" id="AvgPass">
+      <AttrNames>
+        <Item Value="AvgPass"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="ROStudentInGradeView1Iterator" id="ROStudentInGradeView1" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="model.ro.ROStudentInGradeView" Name="ROStudentInGradeView1">
+        <AttrNames>
+          <Item Value="Selectobjects0"/>
+          <Item Value="GradeNumber"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="NumberOfStudents">
+      <AttrNames>
+        <Item Value="NumberOfStudents"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="NumberOfTeachers">
+      <AttrNames>
+        <Item Value="NumberOfTeachers"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="NumberOfClasses">
+      <AttrNames>
+        <Item Value="NumberOfClasses"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="NumberClassesGrade1">
+      <AttrNames>
+        <Item Value="NumberClassesGrade1"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="NumberClassesGrade2">
+      <AttrNames>
+        <Item Value="NumberClassesGrade2"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="NumberClassesGrade3">
+      <AttrNames>
+        <Item Value="NumberClassesGrade3"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="NumberClassesGrade4">
+      <AttrNames>
+        <Item Value="NumberClassesGrade4"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="NumberClassesGrade5">
+      <AttrNames>
+        <Item Value="NumberClassesGrade5"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="NumberClassesGrade6">
+      <AttrNames>
+        <Item Value="NumberClassesGrade6"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="PassStudents">
+      <AttrNames>
+        <Item Value="PassStudents"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="RODashboardStatisticsView1Iterator" id="FailStudents">
+      <AttrNames>
+        <Item Value="FailStudents"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

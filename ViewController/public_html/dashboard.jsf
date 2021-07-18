@@ -1,10 +1,174 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
     <af:document title="School || Dashboard" id="d1">
+        <af:messages id="m1"/>
         <af:form id="f1">
             <af:pageTemplate viewId="/schoolTemplateDef.jsf" id="pt1">
-                <f:facet name="body"/>
+                <f:facet name="body">
+                    <af:panelSplitter id="ps1" splitterPosition="200">
+                        <f:facet name="first">
+                            <af:panelGroupLayout id="pgl1">
+                                <af:panelBox text="Total Number" id="pb5" showDisclosure="false">
+                                    <f:facet name="toolbar"/>
+                                    <af:panelList id="pl1">
+                                        <af:panelGroupLayout id="pgl2" layout="horizontal">
+                                            <af:outputText value="No. Students:" id="ot1"
+                                                           inlineStyle="color:Maroon; font-weight:bold;"/>
+                                            <af:spacer id="s1" height="10" width="10"/>
+                                            <af:link text="#{bindings.NumberOfStudents.inputValue}" id="l1" inlineStyle="font-weight:bold; color:Blue;"
+                                                     action="goToStudents"/>
+                                        </af:panelGroupLayout>
+                                        <af:panelGroupLayout id="pgl3" layout="horizontal">
+                                            <af:outputText value="No. Teachers:" id="ot2"
+                                                           inlineStyle="color:Maroon; font-weight:bold;"/>
+                                            <af:spacer id="s2" height="10" width="10"/>
+                                            <af:link text="#{bindings.NumberOfTeachers.inputValue}" id="l2"
+                                                     inlineStyle="font-weight:bold; color:Blue;" action="goToTeacher"/>
+                                        </af:panelGroupLayout>
+                                        <af:panelGroupLayout id="pgl4" layout="horizontal">
+                                            <af:outputText value="No. Classrooms:" id="ot3"
+                                                           inlineStyle="color:Maroon; font-weight:bold;"/>
+                                            <af:spacer id="s3" height="10" width="10"/>
+                                            <af:link text="#{bindings.NumberOfClasses.inputValue}" id="l3"
+                                                     inlineStyle="font-weight:bold; color:Blue;"
+                                                     action="goToClassrooms"/>
+                                        </af:panelGroupLayout>
+                                    </af:panelList>
+                                </af:panelBox>
+                                <af:spacer id="s13" height="5" width="10"/>
+                                <af:separator id="s14"/>
+                                <af:spacer id="s15" height="5" width="10"/>
+                                <af:panelBox text="Grade Classes" id="pb6" showDisclosure="false">
+                                    <f:facet name="toolbar"/>
+                                    <af:panelList id="pl2">
+                                        <af:panelGroupLayout id="pgl5" layout="horizontal">
+                                            <af:outputText value="Grade 1 Classes" id="ot4"
+                                                           inlineStyle="color:Maroon; font-weight:bold;"/>
+                                            <af:spacer id="s8" height="10" width="10"/>
+                                            <af:link text="#{bindings.NumberClassesGrade1.inputValue}" id="l4"
+                                                     inlineStyle="font-weight:bold; color:Blue;"
+                                                     action="goToClassrooms"/>
+                                        </af:panelGroupLayout>
+                                        <af:panelGroupLayout id="pgl6" layout="horizontal">
+                                            <af:outputText value="Grade 2 Classes" id="ot5"
+                                                           inlineStyle="color:Maroon; font-weight:bold;"/>
+                                            <af:spacer id="s9" height="10" width="10"/>
+                                            <af:link text="#{bindings.NumberClassesGrade2.inputValue}" id="l5"
+                                                     inlineStyle="font-weight:bold; color:Blue;"
+                                                     action="goToClassrooms"/>
+                                        </af:panelGroupLayout>
+                                        <af:panelGroupLayout id="pgl7" layout="horizontal">
+                                            <af:outputText value="Grade 3 Classes" id="ot6"
+                                                           inlineStyle="color:Maroon; font-weight:bold;"/>
+                                            <af:spacer id="s10" height="10" width="10"/>
+                                            <af:link text="#{bindings.NumberClassesGrade3.inputValue}" id="l6"
+                                                     inlineStyle="font-weight:bold; color:Blue;"
+                                                     action="goToClassrooms"/>
+                                        </af:panelGroupLayout>
+                                        <af:panelGroupLayout id="pgl8" layout="horizontal">
+                                            <af:outputText value="Grade 4 Classes" id="ot7"
+                                                           inlineStyle="color:Maroon; font-weight:bold;"/>
+                                            <af:spacer id="s7" height="10" width="10"/>
+                                            <af:link text="#{bindings.NumberClassesGrade4.inputValue}" id="l7"
+                                                     inlineStyle="font-weight:bold; color:Blue;"
+                                                     action="goToClassrooms"/>
+                                        </af:panelGroupLayout>
+                                        <af:panelGroupLayout id="pgl9" layout="horizontal">
+                                            <af:outputText value="Grade 5 Classes" id="ot8"
+                                                           inlineStyle="color:Maroon; font-weight:bold;"/>
+                                            <af:spacer id="s11" height="10" width="10"/>
+                                            <af:link text="#{bindings.NumberClassesGrade5.inputValue}" id="l8"
+                                                     inlineStyle="font-weight:bold; color:Blue;"
+                                                     action="goToClassrooms"/>
+                                        </af:panelGroupLayout>
+                                        <af:panelGroupLayout id="pgl10" layout="horizontal">
+                                            <af:outputText value="Grade 6 Classes" id="ot9"
+                                                           inlineStyle="color:Maroon; font-weight:bold;"/>
+                                            <af:spacer id="s12" height="10" width="10"/>
+                                            <af:link text="#{bindings.NumberClassesGrade6.inputValue}" id="l9"
+                                                     inlineStyle="font-weight:bold; color:Blue;"
+                                                     action="goToClassrooms"/>
+                                        </af:panelGroupLayout>
+                                    </af:panelList>
+                                </af:panelBox>
+                                <af:spacer id="s6" height="5" width="10"/>
+                                <af:separator id="s5"/>
+                                <af:spacer id="s4" height="5" width="10"/>
+                                <af:panelBox text="Total Number" id="pb7" showDisclosure="false">
+                                    <f:facet name="toolbar"/>
+                                    <af:panelList id="pl3">
+                                        <af:panelGroupLayout id="pgl11" layout="horizontal">
+                                            <af:outputText value="No. Pass Students: " id="ot10"
+                                                           inlineStyle="color:Maroon; font-weight:bold;"/>
+                                            <af:spacer id="s16" height="10" width="10"/>
+                                            <af:link text="#{bindings.PassStudents.inputValue}" id="l10"
+                                                     inlineStyle="font-weight:bold; color:Blue;"
+                                                     action="goToStudentResults"/>
+                                        </af:panelGroupLayout>
+                                        <af:panelGroupLayout id="pgl12" layout="horizontal">
+                                            <af:outputText value="No. Fail Students: " id="ot11"
+                                                           inlineStyle="color:Maroon; font-weight:bold;"/>
+                                            <af:spacer id="s17" height="10" width="10"/>
+                                            <af:link text="#{bindings.FailStudents.inputValue}" id="l11"
+                                                     inlineStyle="font-weight:bold; color:Blue;"
+                                                     action="goToStudentResults"/>
+                                        </af:panelGroupLayout>
+                                    </af:panelList>
+                                </af:panelBox>
+                            </af:panelGroupLayout>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:panelDashboard id="pd1" columns="2" rowHeight="50%">
+                                <af:panelBox text="Students in Classeoom" id="pb1" showMaximize="always">
+                                    <f:facet name="toolbar"/>
+                                    <dvt:barChart id="barChart1" var="row"
+                                                  value="#{bindings.RONumberOfStudentInClassView1.collectionModel}"
+                                                  styleClass="AFStretchWidth">
+                                        <dvt:chartLegend rendered="false" id="cl1"/>
+                                        <f:facet name="dataStamp">
+                                            <dvt:chartDataItem id="di1" series="#{row.Selectobjects0}"
+                                                               value="#{row.ClassroomFk}"
+                                                               group="#{bindings.RONumberOfStudentInClassView1.hints.ClassroomFk.label}"/>
+                                        </f:facet>
+                                    </dvt:barChart>
+                                </af:panelBox>
+                                <af:panelBox text="Teachers in Classroom" id="pb2" showMaximize="always">
+                                    <f:facet name="toolbar"/>
+                                    <dvt:pieChart id="pieChart1" var="row"
+                                                  value="#{bindings.ROTeachersInClassroomView1.collectionModel}"
+                                                  styleClass="AFStretchWidth">
+                                        <dvt:chartLegend id="cl2"/>
+                                        <dvt:pieDataItem id="di2" label="#{row.ClassroomFk}"
+                                                         value="#{row.Selectobjects0}"/>
+                                    </dvt:pieChart>
+                                </af:panelBox>
+                                <af:panelBox text="Avg. Pass Students Last Year" id="pb3" showMaximize="always">
+                                    <f:facet name="toolbar"/>
+                                    <dvt:dialGauge id="dialGauge1" maximum="100" value="#{bindings.AvgPass.inputValue}"
+                                                   minimum="0" styleClass="AFStretchWidth">
+                                        <dvt:gaugeMetricLabel rendered="true" id="gml1"/>
+                                    </dvt:dialGauge>
+                                </af:panelBox>
+                                <af:panelBox text="Students in Grade Number" id="pb4" showMaximize="always">
+                                    <f:facet name="toolbar"/>
+                                    <dvt:lineChart id="lineChart1" var="row"
+                                                   value="#{bindings.ROStudentInGradeView1.collectionModel}"
+                                                   styleClass="AFStretchWidth">
+                                        <dvt:chartLegend rendered="false" id="cl3"/>
+                                        <f:facet name="dataStamp">
+                                            <dvt:chartDataItem id="di3"
+                                                               series="#{bindings.ROStudentInGradeView1.hints.Selectobjects0.label}"
+                                                               value="#{row.Selectobjects0}"
+                                                               group="#{row.GradeNumber}"/>
+                                        </f:facet>
+                                    </dvt:lineChart>
+                                </af:panelBox>
+                            </af:panelDashboard>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
                 <f:attribute name="pageTitle" value="Dashboard"/>
             </af:pageTemplate>
         </af:form>

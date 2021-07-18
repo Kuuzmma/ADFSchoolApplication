@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.22.48" id="DataBindings"
              SeparateXMLFiles="false" Package="view" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adfm/dvt"
+             className="oracle.adfinternal.view.faces.dvt.model.binding.FacesBindingFactory"/>
+  </definitionFactories>
   <pageMap>
     <page path="/classrooms.jsf" usageId="view_classroomsPageDef"/>
     <page path="/teachers.jsf" usageId="view_teachersPageDef"/>
@@ -10,6 +14,7 @@
     <page path="/classToTeacher.jsf" usageId="view_classToTeacherPageDef"/>
     <page path="/studentToClass.jsf" usageId="view_studentToClassPageDef"/>
     <page path="/studentResults.jsf" usageId="view_studentResultsPageDef"/>
+    <page path="/dashboard.jsf" usageId="view_dashboardPageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="view_classroomsPageDef" path="view.pageDefs.classroomsPageDef"/>
@@ -20,6 +25,7 @@
     <page id="view_classToTeacherPageDef" path="view.pageDefs.classToTeacherPageDef"/>
     <page id="view_studentToClassPageDef" path="view.pageDefs.studentToClassPageDef"/>
     <page id="view_studentResultsPageDef" path="view.pageDefs.studentResultsPageDef"/>
+    <page id="view_dashboardPageDef" path="view.pageDefs.dashboardPageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="AppModuleDataControl" Package="model.eo"
