@@ -7,11 +7,11 @@
       <property
          name="activityId">dashboard</property>
       <property
-         name="x">119.0</property>
+         name="x">47.0</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>dashboard&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">434.1953</property>
+         name="y">318.49414</property>
       <property
          name="page">/dashboard.jsf</property>
       <property
@@ -67,11 +67,11 @@
       <property
          name="activityId">searchTeacher</property>
       <property
-         name="x">420.0</property>
+         name="x">576.0</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>searchTeacher&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">452.49414</property>
+         name="y">393.79297</property>
       <property
          name="page">/searchTeacher.jsf</property>
       <property
@@ -82,11 +82,11 @@
       <property
          name="activityId">searchStudent</property>
       <property
-         name="x">263.0</property>
+         name="x">61.0</property>
       <property
          name="description">&lt;html>&lt;p>&lt;b>searchStudent&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
       <property
-         name="y">464.49414</property>
+         name="y">419.79297</property>
       <property
          name="page">/searchStudent.jsf</property>
       <property
@@ -154,7 +154,7 @@
       <property
          name="fromOutcome">goToDashboard</property>
       <property
-         name="sdm:polyPoints">L55,278.0,314.94824,160.0,433.84473,R50</property>
+         name="sdm:polyPoints">L50,277.0055,311.44824,88.0,318.14355,R50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -164,7 +164,7 @@
       <property
          name="fromOutcome">goToSearchStudent</property>
       <property
-         name="sdm:polyPoints">B50,314.0,353.94824,263.0,410.14355,T50</property>
+         name="sdm:polyPoints">L61,278.0,318.44824,102.0,419.44238,R50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -174,7 +174,7 @@
       <property
          name="fromOutcome">goToSearchTeacher</property>
       <property
-         name="sdm:polyPoints">R66,350.0,321.94824,420.0,398.14355,T50</property>
+         name="sdm:polyPoints">R66,350.0,321.94824,535.0,393.44238,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -184,7 +184,7 @@
       <property
          name="fromOutcome">goToTeacher</property>
       <property
-         name="sdm:polyPoints">L45,278.0,307.94824,133.0,222.24707,B50</property>
+         name="sdm:polyPoints">L39,278.0,304.44824,133.0,222.24707,B50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -224,7 +224,7 @@
       <property
          name="fromOutcome">goToStudentToClass</property>
       <property
-         name="sdm:polyPoints">R45,351.9809,307.94824,624.0,230.5459,L50</property>
+         name="sdm:polyPoints">R45,351.64267,307.94824,624.0,230.5459,L50</property>
    </ControlFlowCase>
    <ControlFlowCase
       islink="true"
@@ -234,6 +234,31 @@
       <property
          name="fromOutcome">goToStudentResults</property>
       <property
-         name="sdm:polyPoints">R55,351.77426,314.94824,636.0,353.84473,L50</property>
+         name="sdm:polyPoints">R55,350.88968,314.94824,636.0,353.84473,L50</property>
+   </ControlFlowCase>
+   <View
+      id="View21">
+      <property
+         name="activityId">index</property>
+      <property
+         name="x">303.5</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>index&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="y">615.09766</property>
+      <property
+         name="page">/index.jspx</property>
+      <property
+         name="exceptionHandler">false</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase22"
+      from="WildcardControlFlowRule11"
+      to="View21">
+      <property
+         name="fromOutcome">goToIndex</property>
+      <property
+         name="sdm:polyPoints">B50,314.0,353.94824,303.5,560.7471,T50</property>
    </ControlFlowCase>
 </SDM>
