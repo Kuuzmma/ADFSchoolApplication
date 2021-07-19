@@ -27,6 +27,9 @@
   <view id="classrooms">
     <page>/classrooms.jsf</page>
   </view>
+  <view id="index">
+    <page>/index.jspx</page>
+  </view>
   <control-flow-rule id="__1">
     <from-activity-id>*</from-activity-id>
     <control-flow-case id="__2">
@@ -65,6 +68,10 @@
       <from-outcome>goToStudentResults</from-outcome>
       <to-activity-id>studentResults</to-activity-id>
     </control-flow-case>
+    <control-flow-case id="__13">
+      <from-outcome>index</from-outcome>
+      <to-activity-id>index</to-activity-id>
+    </control-flow-case>
   </control-flow-rule>
   <managed-bean id="__11">
     <managed-bean-name>teacher</managed-bean-name>
@@ -74,6 +81,11 @@
   <managed-bean id="__12">
     <managed-bean-name>student</managed-bean-name>
     <managed-bean-class>view.bean.StudentsBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__14">
+    <managed-bean-name>login</managed-bean-name>
+    <managed-bean-class>view.bean.LoginBean</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
 </adfc-config>
