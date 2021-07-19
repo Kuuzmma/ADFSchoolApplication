@@ -69,7 +69,7 @@
       <to-activity-id>studentResults</to-activity-id>
     </control-flow-case>
     <control-flow-case id="__13">
-      <from-outcome>goToIndex</from-outcome>
+      <from-outcome>index</from-outcome>
       <to-activity-id>index</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
@@ -81,6 +81,11 @@
   <managed-bean id="__12">
     <managed-bean-name>student</managed-bean-name>
     <managed-bean-class>view.bean.StudentsBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__14">
+    <managed-bean-name>login</managed-bean-name>
+    <managed-bean-class>view.bean.LoginBean</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
 </adfc-config>

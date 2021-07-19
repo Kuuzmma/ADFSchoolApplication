@@ -8,9 +8,13 @@ import java.io.InputStream;
 
 import java.sql.Connection;
 
+import java.sql.DriverManager;
+
 import oracle.jbo.ApplicationModule;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
+
 import java.util.Map;
 import javax.el.ELContext;
 import javax.el.ExpressionFactory;
@@ -31,6 +35,9 @@ import oracle.adf.model.binding.DCIteratorBinding;
 import oracle.binding.BindingContainer;
 import oracle.binding.OperationBinding;
 import oracle.jbo.server.DBTransaction;
+
+import oracle.jdbc.OracleDriver;
+
 import org.apache.myfaces.trinidad.event.SelectionEvent;
 import org.apache.myfaces.trinidad.model.UploadedFile;
 
@@ -83,7 +90,7 @@ public class MyADFUtil
     }
     return null;
   }
-  
+ 
   public static DBTransaction getDefaultDBTransaction()
   {
     return (DBTransaction) getDefaultApplicationModule().getTransaction();
