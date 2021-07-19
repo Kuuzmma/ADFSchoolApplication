@@ -123,47 +123,56 @@
                             <af:panelDashboard id="pd1" columns="2" rowHeight="50%">
                                 <af:panelBox text="Students in Classeoom" id="pb1" showMaximize="always">
                                     <f:facet name="toolbar"/>
-                                    <dvt:barChart id="barChart1" var="row"
-                                                  value="#{bindings.RONumberOfStudentInClassView1.collectionModel}"
-                                                  styleClass="AFStretchWidth">
-                                        <dvt:chartLegend rendered="false" id="cl1"/>
-                                        <f:facet name="dataStamp">
-                                            <dvt:chartDataItem id="di1" series="#{row.Selectobjects0}"
-                                                               value="#{row.ClassroomFk}"
-                                                               group="#{bindings.RONumberOfStudentInClassView1.hints.ClassroomFk.label}"/>
-                                        </f:facet>
-                                    </dvt:barChart>
+                                    <af:panelGroupLayout id="pgl13" styleClass="AFStretchWidth">
+                                        <dvt:barChart id="barChart1" var="row"
+                                                      value="#{bindings.RONumberOfStudentInClassView1.collectionModel}"
+                                                      styleClass="AFStretchWidth">
+                                            <dvt:chartLegend rendered="false" id="cl1"/>
+                                            <f:facet name="dataStamp">
+                                                <dvt:chartDataItem id="di1" series="#{row.Selectobjects0}"
+                                                                   value="#{row.ClassroomFk}"
+                                                                   group="#{bindings.RONumberOfStudentInClassView1.hints.ClassroomFk.label}"/>
+                                            </f:facet>
+                                        </dvt:barChart>
+                                    </af:panelGroupLayout>
                                 </af:panelBox>
                                 <af:panelBox text="Teachers in Classroom" id="pb2" showMaximize="always">
                                     <f:facet name="toolbar"/>
-                                    <dvt:pieChart id="pieChart1" var="row"
-                                                  value="#{bindings.ROTeachersInClassroomView1.collectionModel}"
-                                                  styleClass="AFStretchWidth">
-                                        <dvt:chartLegend id="cl2"/>
-                                        <dvt:pieDataItem id="di2" label="#{row.ClassroomFk}"
-                                                         value="#{row.Selectobjects0}"/>
-                                    </dvt:pieChart>
+                                    <af:panelGroupLayout id="pgl14" styleClass="AFStretchWiidth">
+                                        <dvt:pieChart id="pieChart1" var="row"
+                                                      value="#{bindings.ROTeachersInClassroomView1.collectionModel}"
+                                                      styleClass="AFStretchWidth">
+                                            <dvt:chartLegend id="cl2"/>
+                                            <dvt:pieDataItem id="di2" label="#{row.ClassroomFk}"
+                                                             value="#{row.Selectobjects0}"/>
+                                        </dvt:pieChart>
+                                    </af:panelGroupLayout>
                                 </af:panelBox>
                                 <af:panelBox text="Avg. Pass Students Last Year" id="pb3" showMaximize="always">
                                     <f:facet name="toolbar"/>
-                                    <dvt:dialGauge id="dialGauge1" maximum="100" value="#{bindings.AvgPass.inputValue}"
-                                                   minimum="0" styleClass="AFStretchWidth">
-                                        <dvt:gaugeMetricLabel rendered="true" id="gml1"/>
-                                    </dvt:dialGauge>
+                                    <af:panelGroupLayout id="pgl15" styleClass="AFStretchWiidth">
+                                        <dvt:dialGauge id="dialGauge1" maximum="100"
+                                                       value="#{bindings.AvgPass.inputValue}" minimum="0"
+                                                       styleClass="AFStretchWidth">
+                                            <dvt:gaugeMetricLabel rendered="true" id="gml1"/>
+                                        </dvt:dialGauge>
+                                    </af:panelGroupLayout>
                                 </af:panelBox>
                                 <af:panelBox text="Students in Grade Number" id="pb4" showMaximize="always">
                                     <f:facet name="toolbar"/>
-                                    <dvt:lineChart id="lineChart1" var="row"
-                                                   value="#{bindings.ROStudentInGradeView1.collectionModel}"
-                                                   styleClass="AFStretchWidth">
-                                        <dvt:chartLegend rendered="false" id="cl3"/>
-                                        <f:facet name="dataStamp">
-                                            <dvt:chartDataItem id="di3"
-                                                               series="#{bindings.ROStudentInGradeView1.hints.Selectobjects0.label}"
-                                                               value="#{row.Selectobjects0}"
-                                                               group="#{row.GradeNumber}"/>
-                                        </f:facet>
-                                    </dvt:lineChart>
+                                    <af:panelGroupLayout id="pgl16" styleClass="AFStretchWiidth">
+                                        <dvt:lineChart id="lineChart1" var="row"
+                                                       value="#{bindings.ROStudentInGradeView1.collectionModel}"
+                                                       styleClass="AFStretchWidth">
+                                            <dvt:chartLegend rendered="false" id="cl3"/>
+                                            <f:facet name="dataStamp">
+                                                <dvt:chartDataItem id="di3"
+                                                                   series="#{bindings.ROStudentInGradeView1.hints.Selectobjects0.label}"
+                                                                   value="#{row.Selectobjects0}"
+                                                                   group="#{row.GradeNumber}"/>
+                                            </f:facet>
+                                        </dvt:lineChart>
+                                    </af:panelGroupLayout>
                                 </af:panelBox>
                             </af:panelDashboard>
                         </f:facet>
