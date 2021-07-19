@@ -1,6 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html>
-<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+        xmlns:h="http://java.sun.com/jsf/html">
     <af:document title="login.jsf" id="d1" initialFocusId="s1:it1">
         <af:form id="f1">
         </af:form>
@@ -10,13 +11,17 @@
                 <af:panelGroupLayout id="pgl1">
                     <af:image source="/images/schoollogo.png" id="i1" shortDesc="Slika"/>
                 </af:panelGroupLayout>
-                <af:spacer id="s2" height="10" width="10"/>
+                <af:spacer id="s2" height="25" width="10"/>
                 <af:subform id="s1" defaultCommand="b1">
-                    <af:inputText label="Username" id="it1" clientComponent="true" required="true"
+                    <af:inputText label="Username:" id="it1" clientComponent="true" required="true"
                                   binding="#{login.usernameInputText}"/>
-                    <af:inputText label="Password" id="it2" required="true" secret="true"
+                    <af:spacer id="s3" height="10" width="10"/>
+                    <af:inputText label="Password:" id="it2" required="true" secret="true"
                                   binding="#{login.passwordInputText}"/>
-                    <af:button text="Login" id="b1" action="#{login.loginAction}"/>
+                    <af:spacer id="s4" height="10" width="10"/>
+                    <af:panelGroupLayout id="pgl2" layout="horizontal" halign="end">
+                        <af:button text="Login" id="b1" action="#{login.loginAction}"/>
+                    </af:panelGroupLayout>
                 </af:subform>
             </af:dialog>
         </af:popup>
