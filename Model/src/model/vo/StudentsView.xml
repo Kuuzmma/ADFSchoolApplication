@@ -14,6 +14,18 @@
   SelectAllAttributes="false"
   PageIterMode="Full"
   AccessMode="DEFAULT">
+  <Variable
+    Name="pStudentName"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="pStudentGendar"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
+  <Variable
+    Name="pStudentAdd"
+    Kind="viewcriteria"
+    Type="java.lang.String"/>
   <ViewAccessor
     Name="StaticGender1"
     ViewObjectName="model.staticvo.StaticGender"
@@ -177,6 +189,114 @@
         Required="Optional"/>
     </ViewCriteriaRow>
   </ViewCriteria>
+  <ViewCriteria
+    Name="StudentsViewCriteriaRest"
+    ViewObjectName="model.vo.StudentsView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="StudentsViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="StudentName"
+        ViewAttribute="StudentName"
+        Operator="="
+        Conjunction="AND"
+        Value=":pStudentName"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewCriteria
+    Name="StudentsViewCriteriaRestGendar"
+    ViewObjectName="model.vo.StudentsView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="StudentsViewCriteriaRestGendar_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="StudentGendar"
+        ViewAttribute="StudentGendar"
+        Operator="="
+        Conjunction="AND"
+        Value=":pStudentGendar"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
+  <ViewCriteria
+    Name="StudentsViewCriteriaRestAdd"
+    ViewObjectName="model.vo.StudentsView"
+    Conjunction="AND">
+    <Properties Name="_Props">
+      <CustomProperties>
+        <Property
+          Name="autoExecute"
+          Value="false"/>
+        <Property
+          Name="mode"
+          Value="Basic"/>
+        <Property
+          Name="allowConjunctionOverride"
+          Value="true"/>
+        <Property
+          Name="showInList"
+          Value="true"/>
+        <Property
+          Name="displayOperators"
+          Value="InAdvancedMode"/>
+      </CustomProperties>
+    </Properties>
+    <ViewCriteriaRow
+      Name="StudentsViewCriteria_row_0"
+      UpperColumns="1">
+      <ViewCriteriaItem
+        Name="StudentsViewCriteria_StudentsViewCriteria_row_0_StudentAddress"
+        ViewAttribute="StudentAddress"
+        Operator="="
+        Conjunction="AND"
+        Value=":pStudentAdd"
+        IsBindVarValue="true"
+        Required="Optional"/>
+    </ViewCriteriaRow>
+  </ViewCriteria>
   <ViewLinkAccessor
     Name="StudentResultView"
     ViewLink="model.vo.StudentLinkResult"
@@ -187,4 +307,51 @@
     ViewLink="model.vo.StudentLinkStudentClass"
     Type="oracle.jbo.RowIterator"
     IsUpdateable="false"/>
+  <RowFinders>
+    <AttrValueRowFinder
+      Name="RestGendarRowFinder"
+      FetchLimit="1"
+      ErrorOnExceedingLimit="true">
+      <ViewCriteriaUsage
+        Name="StudentsViewCriteriaRestGendar"
+        FullName="model.vo.StudentsView.StudentsViewCriteriaRestGendar"/>
+      <VarAttributeMap
+        Name="RestGendarRowFinderMap">
+        <VariableAttributeMapping
+          Name="pStudentGendar"
+          Variable="pStudentGendar"
+          Attribute="StudentGendar"/>
+      </VarAttributeMap>
+    </AttrValueRowFinder>
+    <AttrValueRowFinder
+      Name="RestAddRowFinder"
+      FetchLimit="1"
+      ErrorOnExceedingLimit="true">
+      <ViewCriteriaUsage
+        Name="StudentsViewCriteriaRestAdd"
+        FullName="model.vo.StudentsView.StudentsViewCriteriaRestAdd"/>
+      <VarAttributeMap
+        Name="RestAddRowFinderMap">
+        <VariableAttributeMapping
+          Name="pStudentAdd"
+          Variable="pStudentAdd"
+          Attribute="StudentAddress"/>
+      </VarAttributeMap>
+    </AttrValueRowFinder>
+    <AttrValueRowFinder
+      Name="RestRowFinder"
+      FetchLimit="1"
+      ErrorOnExceedingLimit="true">
+      <ViewCriteriaUsage
+        Name="StudentsViewCriteriaRest"
+        FullName="model.vo.StudentsView.StudentsViewCriteriaRest"/>
+      <VarAttributeMap
+        Name="RestRowFinderMap">
+        <VariableAttributeMapping
+          Name="pStudentName"
+          Variable="pStudentName"
+          Attribute="StudentName"/>
+      </VarAttributeMap>
+    </AttrValueRowFinder>
+  </RowFinders>
 </ViewObject>

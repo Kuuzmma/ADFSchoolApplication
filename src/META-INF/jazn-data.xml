@@ -1,5 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8' standalone = 'yes'?>
 <jazn-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
            xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/jazn-data.xsd">
+    <jazn-realm default="jazn.com">
+        <realm>
+            <name>jazn.com</name>
+            <users>
+                <user>
+                    <name>Test</name>
+                    <credentials>{903}nqcnI5eq5T0htOq93RAtZyeRyHjpxI01</credentials>
+                </user>
+            </users>
+        </realm>
+    </jazn-realm>
     <system-policy/>
 </jazn-data>

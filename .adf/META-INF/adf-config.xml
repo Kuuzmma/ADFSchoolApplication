@@ -10,6 +10,9 @@
         <config:Database jbo.locking.mode="optimistic"/>
       </amconfig-overrides>
     </startup>
+    <versions>
+      <version name="v1" displayName="1"/>
+    </versions>
   </adf-adfm-config>
   <adf:adf-properties-child xmlns="http://xmlns.oracle.com/adf/config/properties">
     <adf-property name="adfAppUID" value="ADFSchoolApplication-4264"/>
@@ -17,5 +20,8 @@
   <sec:adf-security-child xmlns="http://xmlns.oracle.com/adf/security/config">
     <CredentialStoreContext credentialStoreClass="oracle.adf.share.security.providers.jps.CSFCredentialStore"
                             credentialStoreLocation="../../src/META-INF/jps-config.xml"/>
+    <sec:JaasSecurityContext initialContextFactoryClass="oracle.adf.share.security.JAASInitialContextFactory"
+                             jaasProviderClass="oracle.adf.share.security.providers.jps.JpsSecurityContext"
+                             authorizationEnforce="false" authenticationRequire="true"/>
   </sec:adf-security-child>
 </adf-config>

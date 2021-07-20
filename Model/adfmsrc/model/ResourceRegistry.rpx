@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.22.48" id="ResourceRegistry"
+             SeparateXMLFiles="false" Package="model" ClientType="Generic">
+  <pageMap>
+    <page path="v1_Students" usageId="v1_AppModule_StudentsViewResources"/>
+    <page path="v1_Students1" usageId="v1_AppModule_StudentsViewResources"/>
+    <page path="v1_StudentsView1" usageId="v1_AppModule_StudentsViewResources"/>
+  </pageMap>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="model.eo"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+  <pageDefinitionUsages>
+    <page id="v1_AppModule_StudentsViewResources" path="model.eo.rest.v1.AppModule_StudentsViewResources"/>
+  </pageDefinitionUsages>
+</Application>
