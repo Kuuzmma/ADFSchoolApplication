@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="StudentiReport.jsf" id="d1">
+        <af:message id="m1"/>
+        <af:form id="f1">
+            <af:spacer id="s1"/>
+            <af:button id="b1" action="#{jasper.runReportActionStudenti}"/>
+        </af:form>
+        <f:facet name="metaContainer">
+            <af:resource type="javascript">
+            function pressButton(event) {
+                var component = AdfPage.PAGE.findComponentByAbsoluteId("b1");
+                AdfActionEvent.queue(component, component.getPartialSubmit());
+            }
+            </af:resource>
+        </f:facet>
+        <af:clientListener method="pressButton" type="load"/>
+    </af:document>
+</f:view>

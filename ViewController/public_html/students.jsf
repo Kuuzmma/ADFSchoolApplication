@@ -14,6 +14,9 @@
                                     <af:exportCollectionActionListener type="excelHTML" exportedId="t1"
                                                                        filename="Students.xls" title="Students"/>
                                 </af:button>
+                                <af:button text="AllStudents" id="b6" action="goStudentiReport"
+                                           useWindow="true" windowHeight="850" windowWidth="1500"/>
+                                <af:button text="StudentCard" id="b7" action="#{jasper.runReportActionStudentCard}"/>
                             </af:toolbar>
                         </f:facet>
                         <f:facet name="statusbar"/>
