@@ -30,6 +30,17 @@
   <view id="index">
     <page>/index.jspx</page>
   </view>
+  <task-flow-call id="StudentiBTF">
+    <task-flow-reference>
+      <document>/WEB-INF/StudentiBTF.xml</document>
+      <id>StudentiBTF</id>
+    </task-flow-reference>
+    <run-as-dialog>
+      <display-type>
+        <inline-popup/>
+      </display-type>
+    </run-as-dialog>
+  </task-flow-call>
   <control-flow-rule id="__1">
     <from-activity-id>*</from-activity-id>
     <control-flow-case id="__2">
@@ -73,6 +84,13 @@
       <to-activity-id>index</to-activity-id>
     </control-flow-case>
   </control-flow-rule>
+  <control-flow-rule id="__16">
+    <from-activity-id>students</from-activity-id>
+    <control-flow-case id="__17">
+      <from-outcome>goStudentiReport</from-outcome>
+      <to-activity-id>StudentiBTF</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
   <managed-bean id="__11">
     <managed-bean-name>teacher</managed-bean-name>
     <managed-bean-class>view.bean.TeacherBean</managed-bean-class>
@@ -86,6 +104,11 @@
   <managed-bean id="__14">
     <managed-bean-name>login</managed-bean-name>
     <managed-bean-class>view.bean.LoginBean</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__15">
+    <managed-bean-name>jasper</managed-bean-name>
+    <managed-bean-class>view.bean.JasperBean</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
   </managed-bean>
 </adfc-config>
